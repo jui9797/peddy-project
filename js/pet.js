@@ -25,11 +25,13 @@ const displayCategoryBtn =(categories)=>{
 
 }
 
-// load category videos
+// load category pets
 const loadCategoryPets =async(category) =>{
     // alert(category)
+    
 const res = await fetch(`https://openapi.programming-hero.com/api/peddy/category/${category}`)
 const data = await res.json()
+// console.log(data.data)
 
 // remove active class
 removeActive();
@@ -59,6 +61,8 @@ const displaySpinner =() =>{
 }
 displaySpinner();
 
+
+
 // load all pets
 const loadAllPets =async() =>{
     document.getElementById('loading').style.display ="none"
@@ -71,6 +75,7 @@ const loadAllPets =async() =>{
 // display all pets
 const displayAllPets =(pets) =>{
     // console.log(pets);
+    
     const cardContainer =document.getElementById('card-container')
     cardContainer.innerHTML ="";
 
@@ -172,13 +177,13 @@ const showImage =async (id)=>{
 // console.log(id)
 const res = await fetch(`https://openapi.programming-hero.com/api/peddy/pet/${id}`)
 const data = await res.json()
-console.log(data.petData);
+// console.log(data.petData);
 const imageContainer =document.getElementById('image')
-console.log(imageContainer);
+// console.log(imageContainer);
 const div =document.createElement('div')
 div.innerHTML =`
 
-<img src=${data.petData.image}>
+<img class="rounded" src=${data.petData.image}>
 
 `;
 imageContainer.append(div);
