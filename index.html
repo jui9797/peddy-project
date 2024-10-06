@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-6</title>
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- font awesome kits -->
+    <script src="https://kit.fontawesome.com/f0c31f6f45.js" crossorigin="anonymous"></script>
+    <!-- daisy cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- external css -->
+     <link rel="stylesheet" href="style.css">
+
+    <!-- custom css -->
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+                para :'#131313B3',
+                title: '#131313',
+                btn :'#0E7A81',
+              },
+              fontFamily: {
+                lato:"Lato",
+                inter:"Inter",
+              }
+            }
+          }
+        }
+      </script>
+</head>
+<body>
+    
+
+    
+
+    <header class="w-11/12 mx-auto">
+        <!-- navbar -->
+        <div class="navbar  font-lato mt-4">
+            <div class="navbar-start">
+              <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 6h16M4 12h8m-8 6h16" />
+                  </svg>
+                </div>
+                <ul
+                  tabindex="0"
+                  class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                  <li class="text-para"><a>Home</a></li>
+                  <li class="text-para"><a>Shop</a></li>
+                  <li class="text-para"><a>Contact</a></li>
+                </ul>
+              </div>
+              <img src="images/logo.webp" alt="">
+              <p class="font-extrabold text-3xl lg:ml-2">Peddy</p>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+              <ul class="menu menu-horizontal px-1">
+                <li class="text-para"><a>Home</a></li>
+                <li class="text-para"><a>Shop</a></li>
+                <li class="text-para"><a>Contact</a></li>
+              </ul>
+            </div>
+            <div class="navbar-end">
+              <img src="images/Frame 4.png" alt="">
+            </div>
+          </div>
+
+          <!-- banner -->
+          <div class="hero  ">
+            <div class="hero-content text-center flex-col">
+              <div class="max-w-2xl font-lato ">
+              <p class="lg:text-xl my-4 text-para">Bringing Families Together 🔥</p>  
+               <h1 class="font-extrabold text-3xl lg:text-6xl my-4 text-title">Your Path to Adoption Starts Here</h1>
+               <p class="text-title my-4 text-xs  lg:text-base">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+                <a href="#targetSection" class="scroll-button">
+                    <button class="btn bg-btn text-white lg:mb-10">View More</button>
+                </a>
+                
+              </div>
+              <div>
+                <img src="images/pet.webp" alt="">
+              </div>
+              <div>
+                
+              </div>
+              
+            </div>
+            
+          </div>
+    </header>
+    <main class="w-11/12 mx-auto">
+        
+         <section class=" my-6 lg:my-20">
+            <div class="text-center font-lato">
+                <h1 class="font-extrabold font-lato text-3xl lg:text-4xl text-title mb-4">Adopt  Your  Best Friend</h1>
+                <p class="text-para text-xs  lg:text-base">It is a long established fact that a reader will be distracted by the readable content of a <br>page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+            </div>
+
+          
+
+            <!-- dynamic button -->
+            <div id="category-btn" class=" grid grid-cols-2 lg:grid-cols-4 gap-4 my-6  lg:my-10">
+
+            </div>
+            <div class="flex justify-between font-lato">
+                <h2 class="text-2xl font-extrabold text-title">Best Deal For You</h2>
+                <button class="btn bg-btn text-white">Sort bt Price</button>
+
+            </div>
+         </section>
+         
+         <!-- spinner -->
+         <div id="loading" class="  justify-center items-center hidden">
+            <span class="loading loading-bars loading-lg "></span>
+           </div>
+
+      <!-- dynamic card section -->
+       <section id="targetSection" class="flex flex-col lg:flex-row gap-5">
+        <!--left- card -->
+        <div id="card-container" class="lg:w-9/12  rounded grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- single demo card -->
+            <!-- <div class="card bg-base-100 border p-3">
+                <figure class="rounded-lg">
+                  <img
+                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                    alt="Shoes" />
+                </figure>
+                <div class="card-body font-lato">
+                  <h2 class="card-title font-inter text-title font-extrabold">Mister Tartosh</h2>
+                  <p class="text-para"><i class="fa-solid fa-qrcode mr-2"> </i> Breed:</p>
+                  <p class="text-para"><i class="fa-regular fa-calendar mr-2"></i> Birth:</p>
+                  <p class="text-para"><i class="fa-solid fa-mercury mr-2"></i> Gender:</p>
+                  <p class="text-para"><i class="fa-solid fa-dollar-sign mr-2"></i> Price: <span></span>$</p>
+                  <hr>
+                  <div class="flex gap-2 ">
+                    <button class="btn "><i class="fa-regular fa-thumbs-up"></i></button>
+                    <button class="btn text-btn font-bold">Adopt</button>
+                    <button class="btn text-btn font-bold">Details</button>
+                  </div>
+                </div>
+                
+              </div> -->
+
+
+        </div>
+
+    
+
+
+             
+
+        <!-- right -->
+        <div class="lg:w-3/12 border p-2 bg-blue-600 rounded grid grid-cols-2 gap-2">hgjh</div>
+       </section>
+
+      <!-- Open the modal using ID.showModal() method -->
+      
+      <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle ">
+       
+      </dialog>
+
+    </main>
+    <footer class="mt-24">
+        <footer class="footer bg-black text-base-content p-10">
+            
+            <nav class="font-lato text-white">
+              <div class="flex gap-2 justify-center"><img src="images/logo.webp" alt="">
+                <h5 class="text-2xl font-bold">Peddy</h5></div>
+              <a class="text-[#FFFFFFE6]">Location: av. Washington 165, NY CA 54003</a>
+              <a class="link link-hover text-[#FFFFFFE6]">Phone: +31 85 964 47 25</a>
+              <a class="link link-hover text-[#FFFFFFE6]">Email: info@yourdomain.com</a>
+              <a class="text-[#FFFFFFE6]">Openings hours: 9.00 AM - 5.00 PM</a>
+              <div class="flex gap-2">
+                <img src="images/Group 2.png" alt="">
+                <img src="images/x-2 1.png" alt="">
+                <img src="images/Group 6.png" alt="">
+                <img src="images/Group 7.png" alt="">
+              </div>
+            </nav>
+            <nav class="font-lato text-white">
+              <h6 class="text-white text-xl font-bold">Useful Links</h6>
+              <a class="link link-hover text-[#FFFFFF99]">Home</a>
+              <a class="link link-hover text-[#FFFFFF99]">About Us</a>
+              <a class="link link-hover text-[#FFFFFF99]">Animals</a>
+              <a class="link link-hover text-[#FFFFFF99]">Foundation</a>
+              <a class="link link-hover text-[#FFFFFF99]">Contact</a>
+            </nav>
+            <nav class="font-inter text-white">
+                <h6 class="text-white text-xl font-semibold">Drop a Message</h6>
+              <div class="grid grid-flow-col gap-4">
+                <div>
+                    <input type="email" placeholder="Enter your email" class="input w-3/4 rounded-2xl bg-gray-800 max-w-xs" />
+                    <button class="btn bg-btn text-white mt-4 border-none w-3/4  rounded-2xl lg:mb-10">Subscribe</button>
+                </div>
+              </div>
+            </nav>
+          </footer>
+    </footer>
+    <script src="js/pet.js"></script>
+</body>
+</html>
