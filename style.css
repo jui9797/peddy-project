@@ -1,3 +1,9 @@
 html {
     scroll-behavior: smooth;
 }
+
+.btn-style{
+    background-color: #0E7A811A;
+    border-radius: 30px;
+    border-color: #0E7A81;
+}
