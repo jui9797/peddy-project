@@ -117,7 +117,7 @@ const displayAllPets =(pets) =>{
                   <hr>
                   <div class="flex gap-2 ">
                     <button onclick="showImage('${petId}')" class="btn "><i class="fa-regular fa-thumbs-up"></i></button>
-                    <button class="btn text-btn font-bold">Adopt</button>
+                    <button id="adopt" onclick="openCountdownModal(this)" class=" btn text-btn font-bold">Adopt</button>
                     <button onclick=showDetails('${petId}') class="btn text-btn font-bold">Details</button>
                   </div>
                 </div>
@@ -189,5 +189,53 @@ div.innerHTML =`
 imageContainer.append(div);
 }
 
+
+
+
+
+// sorting
+// const sortByPrice =async()=>{
+    
+//     const res =await fetch(`https://openapi.programming-hero.com/api/peddy/pets`)
+//     const data =await res.json()
+//     // console.log(data.pets)
+//      const sortData =data.pets.sort((a,b) => b.price - a.price)
+//      console.log(sortData)
+//      displayAllPets(sortData);
+//     }
+//     sortByPrice();
+
+
+// coundown modal
+  const openCountdownModal =(button) =>{
+    my_modal_1.showModal()
+    const coundownModal =document.getElementById('count-down')
+    // console.log(coundownModal);
+    let countdown =3
+    coundownModal.textContent =countdown
+    const countdownInterval =setInterval(() =>{
+        countdown--
+        coundownModal.textContent =countdown
+        //  console.log(countdown, countdownInterval)
+        if(countdown === 0){
+            clearInterval(countdownInterval)
+            closeCountdownModal(button)
+        }
+    }, 2000)
+  }
+  const closeCountdownModal=(button) =>{
+    const countdownModal= document.getElementById('my_modal_1');
+    my_modal_1.close()
+    // const adoptBtn =document.getElementById('adopt')
+    button.innerText ='adopted'
+    button.disabled =true;
+    
+    
+  }
+      
+
+           
+
+        
 
 
