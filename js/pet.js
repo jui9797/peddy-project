@@ -28,8 +28,11 @@ const displayCategoryBtn =(categories)=>{
 // load category pets
 const loadCategoryPets =async(category) =>{
     // alert(category)
-    
-const res = await fetch(`https://openapi.programming-hero.com/api/peddy/category/${category}`)
+    document.getElementById('loading').style.display ="flex";
+    const cardContainer =document.getElementById('card-container')
+    cardContainer.innerHTML ="";
+    setTimeout ( async function() {
+        const res = await fetch(`https://openapi.programming-hero.com/api/peddy/category/${category}`)
 const data = await res.json()
 // console.log(data.data)
 
@@ -41,6 +44,9 @@ const activeBtn =document.getElementById(`${category}`)
 activeBtn.classList.add('btn-style');
 // console.log(activeBtn);
 displayAllPets(data.data);
+document.getElementById('loading').style.display ="none";
+    }, 2000)
+
 }
 
 const removeActive =()=>{
