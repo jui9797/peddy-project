@@ -21,4 +21,4 @@ I have written some ES6 Features, which are given below:
 - **Async and Await**
 
 # Live link to the deployed project
-- [live]()
+- [live](https://lighthearted-dolphin-cbf4ed.netlify.app/)

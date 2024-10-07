@@ -91,7 +91,7 @@ const displayAllPets =(pets) =>{
     cardContainer.innerHTML =`
     <div class="flex flex-col gap-5 justify-center items-center">
     <img src="images/error.webp">
-    <h2 class="font-inter font-extrabold text-3xl text-title">No Information Available</h2>
+    <h2 class="font-inter font-extrabold text-3xl text-title text-center">No Information Available</h2>
     <p class="font-lato text-para text-center">It is a long established fact that a reader will be distracted by the readable content of a page when looking at 
     its layout. The point of using Lorem Ipsum is that it has a.</p>
     </div>
