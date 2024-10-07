@@ -1,5 +1,5 @@
 # Project Name
-- **Peddy - Pet Adoption Platform**
+- # Peddy - Pet Adoption Platform #
 
 # Short Description of the Project
 - This pet project is designed to help pet owners manage their pets' daily needs and health records efficiently. It allows users to create personalized profiles for each pet, track medical history, set reminders for vet appointments, and organize feeding and exercise schedules. The platform also offers helpful resources on pet care and connects users with local pet services, creating a supportive environment for pet owners to ensure their pets' well-being.

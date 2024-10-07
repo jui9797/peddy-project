@@ -187,10 +187,10 @@ const data = await res.json()
 const imageContainer =document.getElementById('image')
 // console.log(imageContainer);
 const div =document.createElement('div')
-div.classList ="rounded"
+div.classList ="rounded aspect-video"
 div.innerHTML =`
 
-<img class="h-full rounded-xl" src=${data.petData.image}>
+<img class="w-full h-full rounded-xl" src=${data.petData.image}>
 
 `;
 imageContainer.append(div);
