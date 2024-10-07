@@ -181,9 +181,10 @@ const data = await res.json()
 const imageContainer =document.getElementById('image')
 // console.log(imageContainer);
 const div =document.createElement('div')
+div.classList ="rounded"
 div.innerHTML =`
 
-<img class="rounded" src=${data.petData.image}>
+<img class=" rounded-xl" src=${data.petData.image}>
 
 `;
 imageContainer.append(div);
@@ -194,16 +195,17 @@ imageContainer.append(div);
 
 
 // sorting
-// const sortByPrice =async()=>{
+const sortByPrice =async()=>{
     
-//     const res =await fetch(`https://openapi.programming-hero.com/api/peddy/pets`)
-//     const data =await res.json()
-//     // console.log(data.pets)
-//      const sortData =data.pets.sort((a,b) => b.price - a.price)
-//      console.log(sortData)
-//      displayAllPets(sortData);
-//     }
-//     sortByPrice();
+    
+    const res =await fetch(`https://openapi.programming-hero.com/api/peddy/pets`)
+    const data =await res.json()
+    // console.log(data.pets)
+     const sortData =data.pets.sort((a,b) => b.price - a.price)
+     console.log(sortData)
+     displayAllPets(sortData);
+    }
+    
 
 
 // coundown modal
