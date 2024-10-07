@@ -107,7 +107,7 @@ const displayAllPets =(pets) =>{
     // console.log(pet)
     const div =document.createElement('div')
     div.innerHTML = `
-    <div class="card bg-base-100 border p-3">
+    <div class="card bg-base-100 border p-3 h-full">
                 <figure class="rounded-lg lg:w-[300px] lg:h-[200px]">
                   <img
                   class="object-cover w-full h-full"
@@ -145,7 +145,7 @@ const {image, breed, date_of_birth, gender, pet_name, price, vaccinated_status, 
 // display dynamic modal
 const modal= document.getElementById('my_modal_5')
 modal.innerHTML =`
-    <div class="modal-box">
+    <div class="modal-box ">
        <img class="w-full" src=${image}>
        <p class="py-4 font-extrabold font-inter text-2xl">${pet_name}</p>
        <div>
@@ -190,7 +190,7 @@ const div =document.createElement('div')
 div.classList ="rounded"
 div.innerHTML =`
 
-<img class=" rounded-xl" src=${data.petData.image}>
+<img class="h-full rounded-xl" src=${data.petData.image}>
 
 `;
 imageContainer.append(div);
@@ -202,14 +202,19 @@ imageContainer.append(div);
 
 // sorting
 const sortByPrice =async()=>{
+    document.getElementById('loading').style.display ="flex"
+    const cardContainer =document.getElementById('card-container')
+    cardContainer.innerHTML ='';
     
-    
-    const res =await fetch(`https://openapi.programming-hero.com/api/peddy/pets`)
+    setTimeout( async function() {
+         const res =await fetch(`https://openapi.programming-hero.com/api/peddy/pets`)
     const data =await res.json()
     // console.log(data.pets)
      const sortData =data.pets.sort((a,b) => b.price - a.price)
      console.log(sortData)
      displayAllPets(sortData);
+     document.getElementById('loading').style.display ="none"
+    }, 2000)
     }
     
 
@@ -229,13 +234,13 @@ const sortByPrice =async()=>{
             clearInterval(countdownInterval)
             closeCountdownModal(button)
         }
-    }, 2000)
+    }, 1000)
   }
   const closeCountdownModal=(button) =>{
     const countdownModal= document.getElementById('my_modal_1');
     my_modal_1.close()
     // const adoptBtn =document.getElementById('adopt')
-    button.innerText ='adopted'
+    button.innerText ='Adopted'
     button.disabled =true;
     
     
