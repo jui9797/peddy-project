@@ -1,4 +1,5 @@
 // console.log('pet.js connected')
+let storedPetData =[]
 
 // load category btn
 const loadCategories =async () =>{
@@ -44,6 +45,7 @@ const activeBtn =document.getElementById(`${category}`)
 activeBtn.classList.add('btn-style');
 // console.log(activeBtn);
 displayAllPets(data.data);
+storedPetData =data.data
 document.getElementById('loading').style.display ="none";
     }, 2000)
 
@@ -75,6 +77,7 @@ const loadAllPets =async() =>{
     const res =await fetch(`https://openapi.programming-hero.com/api/peddy/pets`)
     const data =await res.json()
     displayAllPets(data.pets);
+    storedPetData= data.pets
 }
 
 
@@ -197,25 +200,39 @@ imageContainer.append(div);
 }
 
 
+// sort 
+const sort =()=>{
+document.getElementById('loading').style.display ="flex"
+const cardContainer =document.getElementById('card-container')
+cardContainer.innerHTML ='';  
+
+console.log(storedPetData);
+const sortedData =storedPetData.sort((a,b)=>b.price- a.price)
+setTimeout(()=>{
+displayAllPets(sortedData);
+document.getElementById('loading').style.display ="none"
+}, 1000)
+}
+
 
 
 
 // sorting
-const sortByPrice =async()=>{
-    document.getElementById('loading').style.display ="flex"
-    const cardContainer =document.getElementById('card-container')
-    cardContainer.innerHTML ='';
+// const sortByPrice =async()=>{
+//     document.getElementById('loading').style.display ="flex"
+//     const cardContainer =document.getElementById('card-container')
+    // cardContainer.innerHTML ='';
     
-    setTimeout( async function() {
-         const res =await fetch(`https://openapi.programming-hero.com/api/peddy/pets`)
-    const data =await res.json()
-    // console.log(data.pets)
-     const sortData =data.pets.sort((a,b) => b.price - a.price)
-     console.log(sortData)
-     displayAllPets(sortData);
-     document.getElementById('loading').style.display ="none"
-    }, 2000)
-    }
+//     setTimeout( async function() {
+//          const res =await fetch(`https://openapi.programming-hero.com/api/peddy/pets`)
+//     const data =await res.json()
+//     // console.log(data.pets)
+//      const sortData =data.pets.sort((a,b) => b.price - a.price)
+//      console.log(sortData)
+//      displayAllPets(sortData);
+//      document.getElementById('loading').style.display ="none"
+//     }, 2000)
+//     }
     
 
 
